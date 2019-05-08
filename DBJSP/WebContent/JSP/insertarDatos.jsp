@@ -13,8 +13,8 @@
 	try {
 		String conexionURL = "jdbc:mysql://localhost/pruebaJSP";
 		String driverDB = "com.mysql.jdbc.Driver";
-		String user = request.getParameter("user");
-		String contra = request.getParameter("contra");
+		String user = "root";
+		String contra = "anboto";
 		Connection connection = null;
 		Class.forName(driverDB).newInstance();
 		connection = DriverManager.getConnection(conexionURL, user, contra);
