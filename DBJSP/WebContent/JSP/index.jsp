@@ -1,13 +1,27 @@
 <%-- index.jsp (proyecto DBJSP) --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@page import="db.dbjsp"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ page language="java" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Base de Datos desde JSP</title>
-	</head>
-	<body>
-
-	</body>
+<head>
+    <meta charset="utf-8">
+    <title>Verifica tu usuario y contraseña</title>
+    <link href="estilos.css" rel="stylesheet" type="text/css"/>
+</head>
+<body style="text-align: center">
+    <div id="div1">
+    	<h2>Verifica tu identidad</h2>
+        <form method="post" action="insertarDatos.jsp">
+     		<p>User</p> 
+      	 	<input name="user">
+     	 	<br>
+    	  	<p>Password</p> 
+    	  	<input type="password" name="contra">
+   			<br>
+      	  	<br>
+      	  	<input type="submit" value="OK">
+		</form>
+    </div>
+</body>
 </html>
