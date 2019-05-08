@@ -20,7 +20,7 @@
     	  	<input type="password" name="contra">
    			<br>
       	  	<br>
-      	  	<input type="submit" value="LogIn">
+      	  	<input type="submit" value="Log In">
 		</form>
     </div>
 </body>
