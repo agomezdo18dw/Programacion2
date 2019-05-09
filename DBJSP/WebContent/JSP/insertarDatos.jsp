@@ -28,7 +28,7 @@
             <input name="edad" type="number">
             <br>
             <br>
-            <input type="submit" value="Insertar Datos" onclick="location.href='verificarInsertar.jsp'">
+            <input type="submit" value="Insertar Datos">
         </form>
     </div>
 </body>

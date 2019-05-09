@@ -8,3 +8,10 @@ body {
     border-radius: 30px;
     margin-left: 28%;
 }
+table {
+	border-collapse: collapse;
+}
+table, th, td {
+	border: 2px solid black;
+	margin-left: 120px;
+}

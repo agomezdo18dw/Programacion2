@@ -18,11 +18,12 @@
         String apellido = request.getParameter("apellido");
         String edad = request.getParameter("edad");
 		try {
-			String conexionURL = "jdbc:mysql://localhost/pruebaJSP";
+			String conexionURL = "jdbc:mysql://localhost/";
+			String database = "pruebajsp";
 			String driverDB = "com.mysql.jdbc.Driver";
 			Connection conn = null;
 			Class.forName(driverDB).newInstance();
-			conn = DriverManager.getConnection(conexionURL, user, contra);
+			conn = DriverManager.getConnection(conexionURL+database, user, contra);
 			Statement st = conn.createStatement();
 			int i=st.executeUpdate("insert into personas(Nombre,Apellido,Edad)values('"+nombre+"','"+apellido+"','"+edad+"')");
 			%>
