@@ -4,37 +4,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Insertar Datos</title>
-	<link href="estilos.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <title>Inserte los datos</title>
+    <link rel="stylesheet" href="estilos.css" type="text/css">
 </head>
 <body>
-	<%
-	try {
-		String conexionURL = "jdbc:mysql://localhost/pruebaJSP";
-		String driverDB = "com.mysql.jdbc.Driver";
-		String user = "root";
-		String contra = "anboto";
-		Connection connection = null;
-		Class.forName(driverDB).newInstance();
-		connection = DriverManager.getConnection(conexionURL, user, contra);
-		if (!connection.isClosed()){
-			%>
-			<font size="" color="green"></b>
-			<% 
-			out.println("Successfully connected to MySQL server using TCP/IP...");
-			connection.close();
-			%>
-			</font>
-			<%
-		}
-	} catch(Exception ex){
-		%>
-		<font size="+3" color="red"></b>
-		<%
-		out.println("Unable to connect to database.");
-	}
-	%>
-	</font>
+    <div id="div1">
+        <h2>Bases de Datos con JSP</h2>
+        <form method="post" action="verificarInsertar.jsp">
+        	<h3>Credenciales para accerder a la base de datos</h3>
+        	Usuario:
+        	<input name="user">
+        	Contraseña:
+        	<input name="contra" type="password">
+        	<h3>Datos a insertar</h3>
+            Nombre:
+            <input name="nombre">
+            Apellido:
+            <input name="apellido">
+            <br>
+            <br>
+            Edad:
+            <input name="edad" type="number">
+            <br>
+            <br>
+            <input type="submit" value="Insertar Datos" onclick="location.href='verificarInsertar.jsp'">
+        </form>
+    </div>
 </body>
 </html>
