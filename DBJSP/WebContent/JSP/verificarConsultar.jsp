@@ -4,18 +4,13 @@
         <%
         String user = request.getParameter("user");
 		String contra = request.getParameter("contra");
-		String conexionURL = "jdbc:mysql://localhost/pruebaJSP";
+		String conexionURL = "jdbc:mysql://localhost/";
+		String database = "pruebajsp";
 		String driverDB = "com.mysql.jdbc.Driver";
 		try {
 			Class.forName(driverDB);
-		} catch(ClassNotFoundException e){
-		%>
-		<font color="red">
-		<%
-			out.println("No se puede conectar con la base de datos");
-		%>
-		</font>
-		<%
+		} catch(Exception ex){
+		
 		}
 		Connection conn = null;
 		Statement st = null;
@@ -40,21 +35,28 @@
 			</tr>
 		<%
 		try{
-			conn = DriverManager.getConnection(conexionURL, user, contra);
+			conn = DriverManager.getConnection(conexionURL+database, user, contra);
 			st = conn.createStatement();
 			String sql = "select * from personas";
 			rs = st.executeQuery(sql);
 			while(rs.next()){
 		%>
-		<tr>
+		<tr> 
 			<td><%=rs.getString("idPersonas")%></td>
 			<td><%=rs.getString("Nombre")%></td>
 			<td><%=rs.getString("Apellido")%></td>
 			<td><%=rs.getString("Edad")%></td>
 		</tr>
-		<%			}
+		<%			
+			}
 		} catch (Exception ex){
-			
+			%>
+			<font color="red">
+			<%
+				out.println("No se puede conectar con la base de datos");
+			%>
+			</font>
+			<%
 		}
 		%>
 		</table>

@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Verificacion insertar datos</title>
+    <title>Verificacion modificar datos</title>
     <link rel="stylesheet" href="estilos.css" type="text/css">
 </head>
 <body>
@@ -17,6 +17,7 @@
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String edad = request.getParameter("edad");
+        String id = request.getParameter("ID");
         String conexionURL = "jdbc:mysql://localhost/";
 		String database = "pruebajsp";
 		String driverDB = "com.mysql.jdbc.Driver";
@@ -25,11 +26,11 @@
 			Class.forName(driverDB).newInstance();
 			conn = DriverManager.getConnection(conexionURL+database, user, contra);
 			Statement st = conn.createStatement();
-			int i=st.executeUpdate("insert into personas(Nombre,Apellido,Edad)values('"+nombre+"','"+apellido+"','"+edad+"')");
+			int i=st.executeUpdate("update personas set Nombre='"+nombre+"',Apellido='"+apellido+"',Edad='"+edad+"' where idPersonas='"+id+"'");
 			%>
 			<font size="" color="green">
 			<%
-			out.println("Se ha agregado a "+nombre+" correctamente");
+			out.println("Se ha modificado a "+nombre+" correctamente");
 			%>
 			</font>
 			<%
