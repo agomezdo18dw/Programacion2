@@ -1,0 +1,20 @@
+body {
+	text-align: center;
+}
+table {
+	border: 2px solid black;
+	margin-left: 30%
+}
+#titulos {
+	background-color: darkgray;
+}
+td {
+	border: 1px solid black;
+	border-collapse: 1px;
+}
+#correcto {
+	color: green;
+}
+#fail{
+	color: red;
+}
